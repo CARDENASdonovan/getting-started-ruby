@@ -11,7 +11,10 @@ Rails.application.routes.draw do
 
   # ---------------------------------------------------------------------------------------------------
   # Products routes
-  resources :products
+  resources :products do
+    resources :subscribers, only: [ :create ]
+  end
+  resource :unsubscribe, only: [ :show ]
 
   # "resources :products" creates the following routes:
   # get "/products", to: "products#index"

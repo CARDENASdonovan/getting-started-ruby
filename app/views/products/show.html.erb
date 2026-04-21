@@ -4,6 +4,8 @@
   <%= @product.description %>
 <% end %>
 
+<%= render "inventory", product: @product %>
+
 <div class="actions">
   <%= link_to "Edit", edit_product_path(@product) %> |
   <%= link_to "Back", products_path %>
